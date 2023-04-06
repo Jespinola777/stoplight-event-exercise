@@ -30,7 +30,7 @@ stopButton.addEventListener("click", function(event){
 }
 })
   
-slowButton.addEventListener("click", function(e){
+slowButton.addEventListener("click", function(event){
   if(slowLight.classList.toggle("slow")){ 
     console.log(`${event.target.textContent} on`)
 }else{
