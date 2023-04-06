@@ -3,45 +3,45 @@ let slowButton= document.getElementById("slowButton")
 let goButton= document.getElementById("goButton")
 let stopLight = document.getElementById("stopLight");
 
-stopButton.addEventListener("click", function(){
+//mouse enter and leave func
+function handleMouseEnter(event){
+  console.log(`Entered ${event.target.textContent} button`)
+}
+function handleMouseLeave(event){
+  console.log(`Left ${event.target.textContent} button`)
+}
+
+
+
+stopButton.addEventListener('mouseenter', handleMouseEnter)
+slowButton.addEventListener('mouseenter', handleMouseEnter)
+goButton.addEventListener('mouseenter', handleMouseEnter)
+
+stopButton.addEventListener('mouseleave', handleMouseLeave)
+goButton.addEventListener('mouseleave', handleMouseLeave)
+slowButton.addEventListener('mouseleave', handleMouseLeave)
+
+
+stopButton.addEventListener("click", function(event){
   if(stopLight.classList.toggle("stop")){ 
-    console.log(`${this.textContent} on`)
+    console.log(`${event.target.textContent} on`)
 }else{
-  console.log(`${this.textContent} off`)
+  console.log(`${event.target.textContent} off`)
 }
+})
   
-});
-stopButton.addEventListener('mouseenter', function(){
-  console.log(`Entered ${this.textContent} button`)
-})
-stopButton.addEventListener('mouseleave', function(){
-  console.log(`Left ${this.textContent} button`)
-})
-
-slowButton.addEventListener("click", function(){
+slowButton.addEventListener("click", function(e){
   if(slowLight.classList.toggle("slow")){ 
-    console.log(`${this.textContent} on`)
+    console.log(`${event.target.textContent} on`)
 }else{
-  console.log(`${this.textContent} off`)
+  console.log(`${event.target.textContent} off`)
 }
 });
-slowButton.addEventListener('mouseenter', function(){
-  console.log(`Entered ${this.textContent} button`)
-})
-slowButton.addEventListener('mouseleave', function(){
-  console.log(`Left ${this.textContent} button`)
-})
 
-goButton.addEventListener("click", function(){
+goButton.addEventListener("click", function(event){
   if(goLight.classList.toggle("go")){ 
-    console.log(`${this.textContent} on`)
+    console.log(`${event.target.textContent} on`)
 }else{
-  console.log(`${this.textContent} off`)
+  console.log(`${event.target.textContent} off`)
 }
 });
-goButton.addEventListener('mouseenter', function(){
-  console.log(`Entered ${this.textContent} button`)
-})
-goButton.addEventListener('mouseleave', function(){
-  console.log(`Left ${this.textContent} button`)
-})
